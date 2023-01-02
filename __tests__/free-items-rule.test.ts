@@ -3,6 +3,7 @@ import { ClassicAd, PremiumAd, StandOutAd } from '../stubs/product-stubs.js';
 import { Product } from '../src/types.js';
 
 const rangeOfClassicAds = (length: number): Product[] => [...Array(length).keys()].map(() => ClassicAd);
+
 describe('given a free items rule', () => {
   describe('when rule is set grant 1 free item for every 3 items in checkout (aka 3 for 2)', () => {
     const rule = new FreeItemsRule({

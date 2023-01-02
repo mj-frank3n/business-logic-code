@@ -1,5 +1,3 @@
-import { FixedPriceRuleSpecification } from './pricing-rules/fixed-price-rule.js';
-import { FreeItemsRuleSpecification } from './pricing-rules/free-items-rule.js';
 import { PricingRuleType } from './pricing-rules/pricing-rule-factory.js';
 
 export interface Product {
@@ -26,4 +24,16 @@ export interface PricingRuleConfig {
 export interface CustomerPricing {
   customerName: string;
   config: PricingRuleConfig[];
+}
+
+
+export interface FreeItemsRuleSpecification {
+  productId: string,
+  applicableToItemCount: number;
+  freeItemsCountToGrant: number;
+}
+
+export interface FixedPriceRuleSpecification {
+  productId: string,
+  fixedPrice: number;
 }

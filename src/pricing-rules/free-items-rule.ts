@@ -1,10 +1,4 @@
-import { PricingRule, Product } from '../types.js';
-
-export interface FreeItemsRuleSpecification {
-  productId: string,
-  applicableToItemCount: number;
-  freeItemsCountToGrant: number;
-}
+import { FreeItemsRuleSpecification, PricingRule, Product } from '../types.js';
 
 export class FreeItemsRule implements PricingRule {
   constructor(private readonly config: FreeItemsRuleSpecification) {}

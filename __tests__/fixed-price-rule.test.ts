@@ -38,12 +38,12 @@ describe('given a fixed price rule', () => {
 
   describe('when configured fixed price is higher than default retail price', () => {
     it('should return no discount', () => {
-      const rule = new FixedPriceRule({
+      const higherPriceRule = new FixedPriceRule({
         productId: PremiumAd.id,
         fixedPrice: PremiumAd.retailPrice + 10000,
       });
 
-      expect(rule.apply([PremiumAd])).toEqual(0);
+      expect(higherPriceRule.apply([PremiumAd])).toEqual(0);
     });
   });
 });

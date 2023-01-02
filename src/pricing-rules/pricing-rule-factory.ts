@@ -1,6 +1,6 @@
-import { CustomerPricing, PricingRule } from '../types.js';
-import { FixedPriceRule, FixedPriceRuleSpecification } from './fixed-price-rule.js';
-import { FreeItemsRule, FreeItemsRuleSpecification } from './free-items-rule.js';
+import { CustomerPricing, FixedPriceRuleSpecification, FreeItemsRuleSpecification, PricingRule } from '../types.js';
+import { FixedPriceRule } from './fixed-price-rule.js';
+import { FreeItemsRule } from './free-items-rule.js';
 import { PricingRulesAggregator } from '../pricing-rules-aggregator.js';
 
 export enum PricingRuleType {
@@ -9,6 +9,7 @@ export enum PricingRuleType {
 }
 
 export const PricingRuleFactory = {
+
   create({ config }: CustomerPricing): PricingRule {
     const rulesCountByProductId = config.reduce((appliedProductIds, rule) => {
       return appliedProductIds[rule.specification.productId] ? {

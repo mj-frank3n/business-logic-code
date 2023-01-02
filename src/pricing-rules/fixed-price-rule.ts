@@ -1,9 +1,4 @@
-import { PricingRule, Product } from '../types.js';
-
-export interface FixedPriceRuleSpecification {
-  productId: string,
-  fixedPrice: number;
-}
+import { FixedPriceRuleSpecification, PricingRule, Product } from '../types.js';
 
 export class FixedPriceRule implements PricingRule {
   constructor(private readonly config: FixedPriceRuleSpecification) {}
